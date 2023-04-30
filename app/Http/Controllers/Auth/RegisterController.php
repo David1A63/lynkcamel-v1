@@ -55,7 +55,7 @@ class RegisterController extends Controller
             'birth' => 'required|string|min:8|max:10|regex:/^\d{4}-\d{2}-\d{2}$/',
             'gender' => 'required|string|min:1|max:1|regex:/^[MF]$/',
             'role' => 'required|string|min:2|max:12|regex:/^[A-Za-z0-9áéíóúüñÑÁÉÍÓÚÜ\s]{2,12}$/',
-            'email' => 'required|string|min:5|max:20|regex:/^([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/',
+            'email' => 'required|string|min:5|max:100|regex:/^([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/',
             'password' => 'required|string|min:8|max:20|regex:/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,20}$/|confirmed',
         ],
         [
@@ -87,7 +87,7 @@ class RegisterController extends Controller
             'email.required' => 'El correo electrónico es obligatorio',
             'email.string' => 'Solo se aceptan correos electrónicos',
             'email.min' => 'No se aceptan correos electrónicos de menos de 5 caracteres',
-            'email.max' => 'No se aceptan correos electronicos de más de 20 caracteres',
+            'email.max' => 'No se aceptan correos electronicos de más de 100 caracteres',
             'email.regex' => 'Solo se aceptan correos electrónicos que cumplan con la estructura adecuada',
             'password.required' => 'La contraseña es obligatoria',
             'password.string' => 'Solo se aceptan contraseñas',

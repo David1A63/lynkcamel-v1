@@ -5,14 +5,14 @@
 4. Busquedas avanzadas (Por diferentes filtros: trabajo, sexo, lugar)
 5. Manejo de códigos de error (400, 404 y 500) - Completado
 6. Validación de formularios con Js
-7. Validación en el año de registro - Compleado (?)
+7. Validación en el año de registro - Compleado
 8. Recuperación de contraseña - Completado
 9. Autenticación de doble factor
 10. Dashboard en las sesiones
 
 ==========SEGURIDAD EN EL DESARROLLO DE APLICACIONES=======
 1. Registro de usuarios validaciones de nombre, apellidos y fechas
-2. Aumentar la longitud de la dirección de los correos electronicos a 100 caracteres
+2. Aumentar la longitud de la dirección de los correos electronicos a 100 caracteres - Completado
 3. Validaciones de la contraseña html y Js
 4. Si no se logra registrar, que no borre los datos que ya había llenado
 5. Validaciones en el login (que indique en que nos equivocamos)

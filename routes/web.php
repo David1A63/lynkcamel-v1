@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Auth\TwoFactorController;
 
 
 /*
@@ -49,3 +50,25 @@ Auth::routes(['verify'=>true]);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 //Posiblemente haya algún fallo en restear la contraseña...
+
+//Rutas para la autenticación de 2 factores
+Route::get('verify/resend', [TwoFactorController::class, 'resend'])->name('verify.resend');
+Route::resource('verify', TwoFactorController::class)->only(['index', 'store']);
+
+/*
+Ejemplo de rutas
+Route::group(['prefix' => 'admin', 'as' => 'admin.', 'namespace' => 'Admin', 'middleware' => ['auth', 'twofactor']], function () {
+    Route::get('/', 'HomeController@index')->name('home');
+    // Permissions
+    Route::delete('permissions/destroy', 'PermissionsController@massDestroy')->name('permissions.massDestroy');
+    Route::resource('permissions', 'PermissionsController');
+
+    // Roles
+    Route::delete('roles/destroy', 'RolesController@massDestroy')->name('roles.massDestroy');
+    Route::resource('roles', 'RolesController');
+
+    // Users
+    Route::delete('users/destroy', 'UsersController@massDestroy')->name('users.massDestroy');
+    Route::resource('users', 'UsersController');
+});
+*/

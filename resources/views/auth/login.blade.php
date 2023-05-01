@@ -8,6 +8,11 @@
 @section('contenidoPrincipal')
 <h3 class="fw-bold text-dark" style="text-align: center;">Login</h3>
 <div class="container bg-secondary rounded-3 align-center p-3" style="width: 400px; margin-bottom: 15%;">
+    @if(\Session::has('message'))
+    <p class="alert alert-info">
+        {{ \Session::get('message') }}
+    </p>
+    @endif
     <form action="{{ route('login') }}" method="post">
         @csrf
         <div class="mb-3">

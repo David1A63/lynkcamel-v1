@@ -40,12 +40,33 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
+                    @guest
+                    @if (Route::has('login'))
                     <li class="nav-item">
-                        <a class="nav-link active text-dark fw-bold " style="font-size: 20px;" href="/login">Login</a>
+                        <a class="nav-link active text-dark fw-bold " style="font-size: 20px;" href="{{ route('login') }}">Login</a>
+                    </li>
+                    @endif
+                    @if (Route::has('register'))
+                    <li class="nav-item">
+                        <a class="nav-link active text-dark fw-bold " style="font-size: 20px;" href="{{ route('register') }}">Registro</a>
+                    </li>
+                    @endif
+                    @else
+                    <li class="nav-item dropdown">
+                    <li class="nav-item">
+                        <a class="nav-link active text-dark fw-bold " style="font-size: 20px;" href="">Usuario: @auth {{ Auth::user()->name }} @endauth</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active text-dark fw-bold" style="font-size: 20px;" href="/register">Registro</a>
+                        <a class="nav-link active text-dark fw-bold" style="font-size: 20px;" href="">Tipo: @auth {{ Auth::user()->role }} @endauth</a>
                     </li>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        @csrf
+                    </form>
+                    <a class="nav-link active text-dark fw-bold" style="font-size: 20px;" href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                        Cerrar Sesión
+                    </a>
+                    </li>
+                    @endguest
                 </ul>
             </div>
         </div>

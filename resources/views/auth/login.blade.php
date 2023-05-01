@@ -22,6 +22,7 @@
                     <option value="">Elige tu rol</option>
                     <option value="Empleado">Empleado</option>
                     <option value="Empleador">Empleador</option>
+                    <option value="Admin">Administrador</option>
                 </select>
                 @error('role')
                 <br>

@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('plantillas.portada')
 
 @section('titulo')
 <title>Autentificación de 2 factores</title>
 @stop
 
-@section('content')
+@section('contenidoPrincipal')
 <h3 class="fw-bold text-dark" style="text-align: center;">Autenticación de dos factores</h3>
 <div class="container bg-secondary rounded-3 align-center p-3" style="width: 400px; margin-bottom: 15%;">
     @if(session()->has('message'))

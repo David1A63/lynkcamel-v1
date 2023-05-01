@@ -34,8 +34,13 @@ class TwoFactorController extends Controller
         if($request->input('two_factor_code') == $user->two_factor_code)
         {
             $user->resetTwoFactorCode();
-
-            return redirect()->route('home');
+            if($user->role == 'Empleado'){
+                return redirect()->route('home');
+            }elseif($user->role == 'Empleador'){
+                return redirect()->route('home');
+            }elseif($user->role == 'Admin'){
+                return redirect()->route('home');
+            }
         }
 
         return redirect()->back()->withErrors(['two_factor_code' => 'El código de doble factor que has ingresado no coincide.']);

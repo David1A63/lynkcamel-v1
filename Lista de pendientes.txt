@@ -27,3 +27,5 @@
 1. Definir sesiones de usuarios (empleado, empleador y administrador)
 2. Enrutar las direcciones dentro de cada sesión
 3. Proteger cada una de las sesiones de usuarios
+
+===========================================================
